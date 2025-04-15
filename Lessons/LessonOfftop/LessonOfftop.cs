@@ -1,6 +1,6 @@
 ﻿namespace Lessons.Lesson5;
 
-public class Lesson5
+public class LessonOfftop
 {
     public void Lesson_5()
     {
