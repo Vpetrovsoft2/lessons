@@ -1,8 +1,8 @@
 ﻿namespace Lessons.Lessont6;
 
-public class Lesson6
+public class Lesson5
 {
-    public void Lesson_6()
+    public void Lesson_5()
     {
         //Обработка исключение
         // try-catch-finally
