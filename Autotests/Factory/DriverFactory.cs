@@ -13,7 +13,9 @@ public class DriverFactory
         switch (browser.ToLower())
         {
             case "chrome":
-                driver = new ChromeDriver();
+                var options = new ChromeOptions();
+                options.PageLoadStrategy = PageLoadStrategy.Eager;
+                driver = new ChromeDriver(options);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();

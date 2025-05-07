@@ -1,11 +1,14 @@
 ﻿using Autotests.Factory;
+using Autotests.Helpers;
 using OpenQA.Selenium;
 
 namespace Autotests.UITests;
 
 public class BaseTests
 {
-    protected IWebDriver Driver;
+    public IWebDriver Driver;
+    protected BaseHelper BaseHelper;
+    protected NavigationHelper NavigationHelper;
 
     [SetUp]
     public void Setup()
@@ -22,6 +25,9 @@ public class BaseTests
     {
         Driver = DriverFactory.CreateDriver();
         Driver.Navigate().GoToUrl("https://demoqa.com/");
+
+        NavigationHelper = new(Driver);
+        BaseHelper = new(Driver);
     }
 
     [OneTimeTearDown]
