@@ -1,5 +1,4 @@
-﻿using Autotests.Pages;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -22,7 +21,7 @@ public class BaseHelper
     public IWebElement WaitElementUntilClickable(By selector)
     {
         //Ожидание
-        WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(10));
+        WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(5));
         return wait.Until(ExpectedConditions.ElementToBeClickable(selector));
     }
 }

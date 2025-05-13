@@ -2,7 +2,7 @@
 
 namespace Autotests.Pages;
 
-public static class FormsPage
+public class FormsPage
 {
     // Book Store Application
     public static By BookStore => By.XPath("//div[text()='Book Store Application']");
