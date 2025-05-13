@@ -8,15 +8,15 @@ namespace Autotests.UITests
         [Test]
         public void Test1()
         {
-            Driver.FindElement(By.XPath("//h5[text()='Elements']"));
+            DI.Driver.FindElement(By.XPath("//h5[text()='Elements']"));
 
-            var forms = Driver.FindElement(By.XPath("//h5[text()='Forms']"));
+            var forms = DI.Driver.FindElement(By.XPath("//h5[text()='Forms']"));
             forms.Click();
 
-            var practiceForm = Driver.FindElement(By.XPath("//span[text()='Practice Form']"));
+            var practiceForm = DI.Driver.FindElement(By.XPath("//span[text()='Practice Form']"));
             practiceForm.Click();
 
-            var userName = Driver.FindElement(By.CssSelector($"input[id='firstName']"));
+            var userName = DI.Driver.FindElement(By.CssSelector($"input[id='firstName']"));
             userName.SendKeys("Vitya");
 
         }
@@ -24,7 +24,7 @@ namespace Autotests.UITests
         [Test]
         public void Test2()
         {
-            Driver.FindElement(By.XPath("//h5[text()='Elements']"));
+            DI.Driver.FindElement(By.XPath("//h5[text()='Elements']"));
 
         }
 
