@@ -1,4 +1,6 @@
 ﻿using Autotests.Pages;
+using Autotests.Pages.NavigationPages;
+using Autotests.Pages.NavigationPages.ElementsPage;
 using OpenQA.Selenium;
 
 namespace Autotests.Helpers;
@@ -15,26 +17,26 @@ public class NavigationHelper : BaseHelper
     public void NavigateToRegistrationPage()
     {
         // Навигация
-        var forms = Driver.FindElement(MainPage.Forms);
-        forms.Click();
+        MainPage.Forms.Click();
+        FormsPage.BookStore.Click();
 
-        var bookStore = Driver.FindElement(FormsPage.BookStore);
-        bookStore.Click();
+        WaitElementUntilClickable(FormsPage.LoginSelector);
 
-        var login = WaitElementUntilClickable(FormsPage.Login);
+        FormsPage.Login.Click();
 
-        login.Click();
+        WaitElementUntilClickable(LoginPage.ButtonNewUserSelector);
 
-        IWebElement buttonNewUser;
-        try
-        {
-            buttonNewUser = Driver.FindElement(LoginPage.ButtonNewUser);
-        }
-        catch (NoSuchElementException ex)
-        {
-            throw ex;
-        }
+        LoginPage.ButtonNewUser.Click();
+    }
 
-        buttonNewUser.Click();
+    /// <summary>
+    /// Переходим на страницу Web Tables
+    /// </summary>
+    public void NavigateToWebTablesPage()
+    {
+        MainPage.Elements.Click();
+        ElementsPage.WebTables.Click();
+
+        WaitElementUntilClickable(ElementsPage.TableSelector);
     }
 }

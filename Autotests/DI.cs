@@ -16,6 +16,7 @@ public static class DI
     public static BaseHelper BaseHelper => ServiceProvider.GetRequiredService<BaseHelper>();
     public static NavigationHelper NavigationHelper => ServiceProvider.GetRequiredService<NavigationHelper>();
     public static RegistrationHelper RegistrationHelper => ServiceProvider.GetRequiredService<RegistrationHelper>();
+    public static ElementsPageHelper ElementsPageHelper => ServiceProvider.GetRequiredService<ElementsPageHelper>();
 
     public static ServiceProvider Configure()
     {
@@ -33,9 +34,11 @@ public static class DI
         services.AddScoped<BaseHelper>();
         services.AddScoped<NavigationHelper>();
         services.AddScoped<RegistrationHelper>();
+        services.AddScoped<ElementsPageHelper>();
 
         //Factory
         services.AddScoped<RegistrationDataFactory>();
+        services.AddScoped<AddUserWebTableFactory>();
         
         return services.BuildServiceProvider();
     }
