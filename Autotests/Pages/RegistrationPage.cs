@@ -3,7 +3,7 @@ using Autotests.UITests;
 
 namespace Autotests.Pages;
 
-public class RegistrationPage : BasePage
+public class RegistrationPage
 {
     public static IWebElement FirstName => DI.Driver.FindElement(By.CssSelector("input[id='firstname']"));
     public static IWebElement LastName => DI.Driver.FindElement(By.CssSelector("input[id='lastname']"));

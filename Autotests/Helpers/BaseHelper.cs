@@ -18,10 +18,10 @@ public class BaseHelper
     /// </summary>
     /// <param name="selector">Селектор элемента</param>
     /// <returns>IWebElement</returns>
-    public IWebElement WaitElementUntilClickable(By selector)
+    public void WaitElementUntilClickable(By selector)
     {
         //Ожидание
         WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(5));
-        return wait.Until(ExpectedConditions.ElementToBeClickable(selector));
+        wait.Until(ExpectedConditions.ElementToBeClickable(selector));
     }
 }
