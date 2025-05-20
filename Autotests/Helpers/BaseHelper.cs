@@ -21,7 +21,10 @@ public class BaseHelper
     public void WaitElementUntilClickable(By selector)
     {
         //Ожидание
-        WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(5));
-        wait.Until(ExpectedConditions.ElementToBeClickable(selector));
+        DI.AllureReportHelper.RunStep($"Ожидаем появления элемента: {selector}", () => 
+        { 
+            WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.ElementToBeClickable(selector));
+        });
     }
 }

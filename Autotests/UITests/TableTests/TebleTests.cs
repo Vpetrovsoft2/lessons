@@ -15,6 +15,12 @@ public class TebleTests : BaseTests
 
         int countAfter = DI.ElementsPageHelper.GetRowsDataFromTable().Count;
 
-        Assert.AreEqual(countBefore + 1, countAfter);
+        DI.AllureReportHelper.TryRunStep("Сравниваем результаты теста", () => 
+        {
+            if (countBefore + 1 == countAfter)
+                DI.AllureReportHelper.MessageInNewStep($"Значение строк до: {countBefore} увеличелось на 1: {countAfter}");
+            else
+                DI.AllureReportHelper.ErrorMessageInNewStep($"Значение строк до: {countBefore} не увеличелось на 1: {countAfter}");
+        });
     }
 }

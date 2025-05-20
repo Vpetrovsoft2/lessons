@@ -13,28 +13,31 @@ public class ElementsPageHelper
     /// <returns>List<ElementsWebTableModel></returns>
     public List<ElementsWebTableModel> GetRowsDataFromTable()
     {
-        List<IWebElement> rows = ElementsPage.Rows;
-
+        List<IWebElement> rows = WebTablesPage.Rows;
         List<ElementsWebTableModel> listRows = new();
         string result = string.Empty;
-        foreach (var row in rows)
-        {
-            result = row.Text.Replace(" ", "");
-            if (!string.IsNullOrEmpty(result))
-            {
-                string[] stringArray = result.Split("\r\n");
 
-                listRows.Add(new ElementsWebTableModel
+        DI.AllureReportHelper.RunStep("Получаем строки из таблицы", () => 
+        { 
+            foreach (var row in rows)
+            {
+                result = row.Text.Replace(" ", "");
+                if (!string.IsNullOrEmpty(result))
                 {
-                    FirstName = stringArray[0],
-                    LastName = stringArray[1],
-                    Age = int.Parse(stringArray[2]),
-                    Email = stringArray[3],
-                    Salary = int.Parse(stringArray[4]),
-                    Department = stringArray[5]
-                });
+                    string[] stringArray = result.Split("\r\n");
+
+                    listRows.Add(new ElementsWebTableModel
+                    {
+                        FirstName = stringArray[0],
+                        LastName = stringArray[1],
+                        Age = int.Parse(stringArray[2]),
+                        Email = stringArray[3],
+                        Salary = int.Parse(stringArray[4]),
+                        Department = stringArray[5]
+                    });
+                }
             }
-        }
+        });
 
         return listRows;
     }
@@ -45,15 +48,18 @@ public class ElementsPageHelper
     /// <param name="factory">Тестовые данные</param>
     public void AddNewRowInTable(AddUserWebTableFactory factory)
     {
-        ElementsPage.ButtonAdd.Click();
+        DI.AllureReportHelper.RunStep("Добавляем строку в таблицу", () => 
+        { 
+            WebTablesPage.ButtonAdd.Click();
 
-        ElementsAddModalPage.InputFirsName.SendKeys(factory.FirstName);
-        ElementsAddModalPage.InputLastName.SendKeys(factory.LastName);
-        ElementsAddModalPage.InputEmail.SendKeys(factory.Email);
-        ElementsAddModalPage.InputAge.SendKeys(factory.Age);
-        ElementsAddModalPage.InputSalary.SendKeys(factory.Salary);
-        ElementsAddModalPage.InputDepartment.SendKeys(factory.Department);
+            WebTablesModalPage.InputFirsName.SendKeys(factory.FirstName);
+            WebTablesModalPage.InputLastName.SendKeys(factory.LastName);
+            WebTablesModalPage.InputEmail.SendKeys(factory.Email);
+            WebTablesModalPage.InputAge.SendKeys(factory.Age);
+            WebTablesModalPage.InputSalary.SendKeys(factory.Salary);
+            WebTablesModalPage.InputDepartment.SendKeys(factory.Department);
 
-        ElementsAddModalPage.ButtonSubmit.Click();
+            WebTablesModalPage.ButtonSubmit.Click();
+        });
     }
 }
