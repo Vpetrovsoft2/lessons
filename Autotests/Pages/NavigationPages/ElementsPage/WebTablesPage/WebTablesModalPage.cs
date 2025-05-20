@@ -2,7 +2,7 @@
 
 namespace Autotests.Pages.NavigationPages.ElementsPage;
 
-public class ElementsAddModalPage
+public class WebTablesModalPage
 {
     public static IWebElement InputFirsName => DI.Driver.FindElement(By.CssSelector("input[id='firstName']"));
     public static IWebElement InputLastName => DI.Driver.FindElement(By.CssSelector("input[id='lastName']"));

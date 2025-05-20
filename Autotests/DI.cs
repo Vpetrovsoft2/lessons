@@ -1,4 +1,5 @@
-﻿using Autotests.Factory;
+﻿using AllureService;
+using Autotests.Factory;
 using Autotests.Helpers;
 using Autotests.Pages;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ public static class DI
     public static NavigationHelper NavigationHelper => ServiceProvider.GetRequiredService<NavigationHelper>();
     public static RegistrationHelper RegistrationHelper => ServiceProvider.GetRequiredService<RegistrationHelper>();
     public static ElementsPageHelper ElementsPageHelper => ServiceProvider.GetRequiredService<ElementsPageHelper>();
+    public static AllureReportHelper AllureReportHelper => ServiceProvider.GetRequiredService<AllureReportHelper>();
 
     public static ServiceProvider Configure()
     {
@@ -39,6 +41,9 @@ public static class DI
         //Factory
         services.AddScoped<RegistrationDataFactory>();
         services.AddScoped<AddUserWebTableFactory>();
+
+        //Allure
+        services.AddScoped<AllureReportHelper>();
         
         return services.BuildServiceProvider();
     }

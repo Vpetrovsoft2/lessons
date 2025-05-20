@@ -2,10 +2,11 @@
 
 namespace Autotests.Pages.NavigationPages.ElementsPage;
 
-public class ElementsPage
+public class WebTablesPage
 {
     // Для навигации
     public static IWebElement WebTables => DI.Driver.FindElement(By.XPath("//span[text()='Web Tables']"));
+    public static IWebElement CheckBox => DI.Driver.FindElement(By.XPath("//span[text()='Check Box']"));
 
     // Элементы страницы
     public static IWebElement ButtonAdd => DI.Driver.FindElement(By.CssSelector("button[id='addNewRecordButton']"));
