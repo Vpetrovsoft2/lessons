@@ -2,7 +2,7 @@
 
 namespace Autotests.Pages.NavigationPages.ElementsPage;
 
-public class ElementsPage
+public class WebTablesPage
 {
     // Элементы страницы
     public static IWebElement ButtonAdd => DI.Driver.FindElement(By.CssSelector("button[id='addNewRecordButton']"));

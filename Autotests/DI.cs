@@ -1,4 +1,5 @@
-﻿using Autotests.Factory;
+﻿using AllureService;
+using Autotests.Factory;
 using Autotests.Helpers;
 using Autotests.Pages;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,6 +43,9 @@ public static class DI
         //Factory
         services.AddScoped<RegistrationDataFactory>();
         services.AddScoped<AddUserWebTableFactory>();
+
+        //Allure
+        services.AddScoped<AllureReportHelper>();
         
         return services.BuildServiceProvider();
     }

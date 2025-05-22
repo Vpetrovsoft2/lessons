@@ -1,5 +1,8 @@
-﻿namespace Autotests.UITests;
+﻿using Allure.NUnit;
 
+namespace Autotests.UITests;
+
+[AllureNUnit]
 public class BaseTests
 {
     public BaseTests()
@@ -26,5 +29,6 @@ public class BaseTests
     [OneTimeTearDown]
     public void OneTimeTearDown()
     {
+        DI.Driver.Close();
     }
 }
