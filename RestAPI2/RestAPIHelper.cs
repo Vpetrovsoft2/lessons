@@ -1,6 +1,8 @@
-﻿namespace RestAPIService;
+﻿using System.Net;
 
-public class RestAPIHelper
+namespace RestAPIService;
+
+public class RestAPIHelper : IRestAPIService
 {
     private HttpClient HttpClient => new();
 
@@ -19,4 +21,21 @@ public class RestAPIHelper
 
         return responseBody;
     }
+
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    public async Task<string> Post(string requestUrl, HttpContent requestBody)
+    {
+        string responseBody = string.Empty;
+        HttpResponseMessage postResponse = await HttpClient.PostAsync(requestUrl, requestBody);
+
+        if (postResponse.IsSuccessStatusCode)
+            responseBody = await postResponse.Content.ReadAsStringAsync();
+        else
+            throw new Exception($"Status code: {postResponse.StatusCode}");
+
+        return responseBody;
+    }
+
 }
