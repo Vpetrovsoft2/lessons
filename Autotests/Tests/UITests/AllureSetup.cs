@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Autotests.UITests;
+namespace Autotests.Tests.UITests;
 
 [SetUpFixture]
 public class AllureSetup

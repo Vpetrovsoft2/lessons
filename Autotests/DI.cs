@@ -1,10 +1,10 @@
 ﻿using AllureService;
 using Autotests.Factory;
 using Autotests.Helpers;
-using Autotests.Pages;
 using Microsoft.Extensions.DependencyInjection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using RestAPIService;
 
 namespace Autotests;
 
@@ -20,6 +20,7 @@ public static class DI
     public static ElementsPageHelper ElementsPageHelper => ServiceProvider.GetRequiredService<ElementsPageHelper>();
     public static AllureReportHelper AllureReportHelper => ServiceProvider.GetRequiredService<AllureReportHelper>();
     public static FormatHelper FormatHelper => ServiceProvider.GetRequiredService<FormatHelper>();
+    public static RestAPIHelper RestAPIHelper => ServiceProvider.GetRequiredService<RestAPIHelper>();
 
     public static ServiceProvider Configure()
     {
@@ -46,6 +47,9 @@ public static class DI
 
         //Allure
         services.AddScoped<AllureReportHelper>();
+
+        //RestAPI
+        services.AddScoped<RestAPIHelper>();
         
         return services.BuildServiceProvider();
     }

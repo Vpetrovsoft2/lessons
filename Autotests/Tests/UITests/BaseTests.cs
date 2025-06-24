@@ -1,11 +1,11 @@
 ﻿using Allure.NUnit;
 
-namespace Autotests.UITests;
+namespace Autotests.Tests.UITests;
 
 [AllureNUnit]
-public class BaseTests
+public class BaseAPITests
 {
-    public BaseTests()
+    public BaseAPITests()
     {
     }
 

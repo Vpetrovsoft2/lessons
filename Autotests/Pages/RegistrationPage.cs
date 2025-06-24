@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using Autotests.UITests;
+using Autotests.Tests.UITests;
 
 namespace Autotests.Pages;
 
