@@ -1,9 +1,10 @@
 ﻿using Autotests.Pages.NavigationPages.WidgetsPage.DatePickerPage;
+using Autotests.Tests.UITests;
 using OpenQA.Selenium;
 
-namespace Autotests.UITests.DataPickerTests;
+namespace Autotests.Tests.UITests.DataPickerTests;
 
-public class DatePickerTests : BaseTests
+public class DatePickerTests : BaseAPITests
 {
     [Test]
     public void DatePickerByInput()

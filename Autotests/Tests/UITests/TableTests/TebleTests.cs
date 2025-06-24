@@ -2,11 +2,12 @@
 using Autotests.Factory;
 using Autotests.Models;
 using Autotests.Pages.NavigationPages.ElementsPage;
+using Autotests.Tests.UITests;
 using OpenQA.Selenium.Support.UI;
 
-namespace Autotests.UITests.TableTests;
+namespace Autotests.Tests.UITests.TableTests;
 
-public class TebleTests : BaseTests
+public class TebleTests : BaseAPITests
 {
     [Test]
     [TestCase(Author = "Vitaly Petrov", Description = "Добавление сущности в таблицу")]

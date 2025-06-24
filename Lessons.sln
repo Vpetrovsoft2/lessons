@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autotests", "Autotests\Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllureService", "AllureService\AllureService.csproj", "{3732E411-3EDD-44A9-B541-B16D5B462470}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPIService", "RestAPI2\RestAPIService.csproj", "{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,17 @@ Global
 		{3732E411-3EDD-44A9-B541-B16D5B462470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3732E411-3EDD-44A9-B541-B16D5B462470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3732E411-3EDD-44A9-B541-B16D5B462470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3732E411-3EDD-44A9-B541-B16D5B462470} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{3E6F6CC9-7FCD-41A4-A879-A3EC6DCBB652} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3607A7A9-7157-49B8-9ADA-E27F52A3B864}

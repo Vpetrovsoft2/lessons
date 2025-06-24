@@ -1,9 +1,10 @@
 ﻿using Autotests.Pages.NavigationPages.ElementsPage.CheckBoxPage;
+using Autotests.Tests.UITests;
 using OpenQA.Selenium;
 
-namespace Autotests.UITests.CheckBoxTests;
+namespace Autotests.Tests.UITests.CheckBoxTests;
 
-public class CheckBoxTests : BaseTests
+public class CheckBoxTests : BaseAPITests
 {
     [Test]
     public void CheckBoxDesktopTest()

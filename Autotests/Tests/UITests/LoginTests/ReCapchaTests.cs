@@ -1,10 +1,11 @@
 ﻿using OpenQA.Selenium;
 using Autotests.Helpers;
 using Autotests.Factory;
+using Autotests.Tests.UITests;
 
-namespace Autotests.UITests.LoginTests;
+namespace Autotests.Tests.UITests.LoginTests;
 
-public class ReCapchaTests : BaseTests
+public class ReCapchaTests : BaseAPITests
 {
     [Test]
     public void CheckReCapchaTest()

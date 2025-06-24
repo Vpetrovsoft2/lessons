@@ -1,10 +1,11 @@
 ﻿using Autotests.Pages.NavigationPages.WidgetsPage.SliderPage;
+using Autotests.Tests.UITests;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
-namespace Autotests.UITests.SliderTests;
+namespace Autotests.Tests.UITests.SliderTests;
 
-public class SliderTests : BaseTests
+public class SliderTests : BaseAPITests
 {
     private const int weigth = 469;
 
