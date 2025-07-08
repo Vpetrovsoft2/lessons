@@ -20,6 +20,9 @@ public static class DI
     public static ElementsPageHelper ElementsPageHelper => ServiceProvider.GetRequiredService<ElementsPageHelper>();
     public static AllureReportHelper AllureReportHelper => ServiceProvider.GetRequiredService<AllureReportHelper>();
     public static FormatHelper FormatHelper => ServiceProvider.GetRequiredService<FormatHelper>();
+    public static APIHelper APIHelper => ServiceProvider.GetRequiredService<APIHelper>();
+
+
     public static RestAPIHelper RestAPIHelper => ServiceProvider.GetRequiredService<RestAPIHelper>();
 
     public static ServiceProvider Configure()
@@ -40,6 +43,7 @@ public static class DI
         services.AddScoped<RegistrationHelper>();
         services.AddScoped<ElementsPageHelper>();
         services.AddScoped<FormatHelper>();
+        services.AddScoped<APIHelper>();
 
         //Factory
         services.AddScoped<RegistrationDataFactory>();
