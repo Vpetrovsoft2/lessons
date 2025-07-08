@@ -2,7 +2,7 @@
 
 namespace Autotests.Models.APIModels.StudentsModels.StudentsResponseModels;
 
-public class CreateStudentResponseModel
+public class PutStudentResponseModel
 {
     [JsonProperty("id")]
     public long Id { get; set; }
@@ -20,13 +20,16 @@ public class CreateStudentResponseModel
     public Facultet Facultet { get; set; } = new();
 }
 
-public class Facultet
+public class FacultetPut
 {
     [JsonProperty("id")]
     public long Id { get; set; }
 
     [JsonProperty("name")]
     public string Name { get; set; } = string.Empty;
+
+    [JsonProperty("lastName")]
+    public string LastName { get; set; } = string.Empty;
 
     [JsonProperty("students")]
     public CreateStudentResponseModel[] Students { get; set; } = [];
