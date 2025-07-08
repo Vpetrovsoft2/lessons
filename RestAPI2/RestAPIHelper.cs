@@ -38,4 +38,35 @@ public class RestAPIHelper : IRestAPIService
         return responseBody;
     }
 
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    public async Task<string> Delete(string requestUrl)
+    {
+        string responseBody = string.Empty;
+        HttpResponseMessage deleteResponse = await HttpClient.DeleteAsync(requestUrl);
+
+        if (deleteResponse.IsSuccessStatusCode)
+            responseBody = await deleteResponse.Content.ReadAsStringAsync();
+        else
+            throw new Exception($"Status code: {deleteResponse.StatusCode}");
+
+        return responseBody;
+    }
+
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    public async Task<string> Put(string requestUrl, HttpContent requestBody)
+    {
+        string responseBody = string.Empty;
+        HttpResponseMessage putResponse = await HttpClient.PutAsync(requestUrl, requestBody);
+
+        if (putResponse.IsSuccessStatusCode)
+            responseBody = await putResponse.Content.ReadAsStringAsync();
+        else
+            throw new Exception($"Status code: {putResponse.StatusCode}");
+
+        return responseBody;
+    }
 }
